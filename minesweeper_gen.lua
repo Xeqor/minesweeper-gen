@@ -1,7 +1,7 @@
 local Board = {}
 
 function Board.UnoptimizedGenerateBoard(X, Y, Mines)
-	assert(X * Y > Mines, "More mines than available tiles!")
+	assert(X * Y <= Mines, "More mines than available tiles!")
 	
 	local GeneratedBoard = {}
 	
@@ -28,7 +28,7 @@ function Board.UnoptimizedGenerateBoard(X, Y, Mines)
 end
 
 function Board.OptimizedGenerateBoard(X, Y, Mines) 
-	assert(X * Y > Mines, "More mines than available tiles!")
+	assert(X * Y <= Mines, "More mines than available tiles!")
 	
 	local UnchosenTiles = table.create(X)
 	
